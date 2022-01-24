@@ -8,7 +8,7 @@ class Personnage {
     this.armor = 1;
     this.armorSpell = 10;
     this.atk = 5;
-    this.atkSpell = 25;
+    this.atkSpell = 15;
     this.lvl = 1;
   }
 

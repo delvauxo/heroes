@@ -6,6 +6,8 @@ body {
   margin: 0;
   width: 100vw;
   overflow-x: hidden;
+  background-color: rgb(2, 16, 50);
+  color: white;
 }
 
 header {
@@ -37,19 +39,66 @@ header {
   cursor: pointer;
 }
 
-.hero-card img,
-.monster-card img,
-.in-game-card img {
+.hero-card,
+.monster-card {
+  position: relative;
+}
+
+.hero-card img.portrait-card,
+.monster-card img.portrait-card {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   max-width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.hero-card .role-icon-container,
+.monster-card .role-icon-container {
+  width: 25%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.hero-card .role-icon-container img,
+.monster-card .role-icon-container img {
+  display: block;
+  background: transparent url(../img/role-icons.png) 0 0 no-repeat;
+  background-position-x: 0px;
+  background-position-y: 0px;
+  background-size: auto;
+  background-size: 600%;
+  width: 100%;
+  height: 0;
+  padding-bottom: 115%;
+}
+
+.monster-card .role-icon-container .monster {
+  background-position: 20% 0;
+}
+
+.hero-card .role-icon-container .warrior {
+  background-position: 0 0;
+}
+
+.hero-card .role-icon-container .archer {
+  background-position: 100% 0;
+}
+
+.hero-card .role-icon-container .assasin {
+  background-position: 80% 0;
+}
+
+.hero-card .role-icon-container .magician {
+  background-position: 60% 0;
 }
 
 .hero-card .hero-name,
 .monster-card .monster-name {
   text-align: center;
   text-transform: uppercase;
+  margin-top: 15%;
 }
 
 .hero-card-container.is-selected,

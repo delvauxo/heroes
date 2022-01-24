@@ -8,6 +8,8 @@ class Magician extends Personnage {
         this.role = 'Magician'
         this.atk = this.atk * 1.4
         this.armor = this.armor * 1
+        this.atkSpell = Math.floor(this.atkSpell * 1.7)
+        this.armorSpell = this.armorSpell + this.armor
     }
 
 }

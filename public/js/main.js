@@ -34,7 +34,10 @@ function cardHtml(heroesObjArray, type) {
   for (const hero of heroesObjArray) {
     html += `<div class="${type}-card-container" data-player="${hero.name}">`
     html += `<div class="${type}-card">`
-    html += `<img src="./public/img/${hero.name.toLowerCase()}.jpg" alt="${hero.name} portrait">`
+    html += `<img class="portrait-card" src="./public/img/${hero.name.toLowerCase()}.jpg" alt="${hero.name} portrait">`
+    html += `<div class="role-icon-container">`
+    html += `<img class="${hero.role.toLowerCase()}">`
+    html += `</div>` 
     html += `<div class="${type}-name">${hero.name}</div>`
     html += `<div class="${type}-role">${hero.role}</div>`
     html += `<div class="${type}-hp">hp : ${hero.hp}</div>`

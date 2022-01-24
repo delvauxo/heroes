@@ -7,8 +7,9 @@ class Assasin extends Personnage {
         this.hp = this.hp * 1.25
         this.role = 'Assasin'
         this.atk = this.atk * 1.6
-        this.atkSpell = this.atkSpell * 1
+        this.atkSpell = Math.floor(this.atkSpell * 1.35)
         this.armor = this.armor * 3
+        this.armorSpell = this.armorSpell + this.armor
     }
 
 }

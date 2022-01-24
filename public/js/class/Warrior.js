@@ -8,6 +8,7 @@ class Warrior extends Personnage {
         this.role = 'Warrior'
         this.atk = this.atk * 1
         this.armor = this.armor * 4
+        this.armorSpell = this.armorSpell + this.armor
     }
 
 }

@@ -32,7 +32,7 @@ console.log(heroes, monsters)
 function cardHtml(heroesObjArray, type) {
   let html = ''
   for (const hero of heroesObjArray) {
-    html += `<div class="${type}-card-container" data-player="${hero.name}">`
+    html += `<div class="${type}-card-container ${hero.role.toLowerCase()}" data-player="${hero.name}">`
     html += `<div class="${type}-card">`
     html += `<img class="portrait-card" src="./public/img/${hero.name.toLowerCase()}.jpg" alt="${hero.name} portrait">`
     html += `<div class="role-icon-container">`

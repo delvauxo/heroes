@@ -1,24 +1,21 @@
 @font-face {
   font-family: 'Metronic Pro';
-  src: url('../fonts/MetronicPro.eot');
-  src: local('../fonts/Metronic Pro SemiBold'), local('../fonts/MetronicPro'),
-      url('../fonts/MetronicPro.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/MetronicPro.woff2') format('woff2'),
-      url('../fonts/MetronicPro.woff') format('woff'),
-      url('../fonts/MetronicPro.ttf') format('truetype');
+  src: url("../fonts/MetronicPro.eot");
+  src: local("../fonts/Metronic Pro SemiBold"), local("../fonts/MetronicPro"), url("../fonts/MetronicPro.eot?#iefix") format("embedded-opentype"), url("../fonts/MetronicPro.woff2") format("woff2"), url("../fonts/MetronicPro.woff") format("woff"), url("../fonts/MetronicPro.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   margin: 0;
   width: 100vw;
   overflow-x: hidden;
-  background-color: rgb(2, 16, 50);
+  background-color: #021032;
   color: white;
   font-family: 'Metronic Pro';
 }
@@ -32,6 +29,11 @@ header {
   background-repeat: no-repeat;
   background-color: black;
   position: relative;
+  border: 0;
+  border-bottom-width: 1px;
+  border-style: solid;
+  -o-border-image: radial-gradient(transparent, #5d9dce, transparent) 1;
+     border-image: radial-gradient(transparent, #5d9dce, transparent) 1;
 }
 
 section {
@@ -39,7 +41,6 @@ section {
 }
 
 /* GAME - Selection */
-
 #heroes-selection h2 {
   margin: 0;
   padding: 25px 0;
@@ -47,35 +48,77 @@ section {
 
 #heroes,
 #monsters {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   gap: 20px;
 }
 
 .hero-card-container,
 .monster-card-container {
   width: 25%;
-  border: 1px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
+.hero-card-container img.portrait-card,
+.monster-card-container img.portrait-card {
+  border: 0;
+  border-bottom-width: 2px;
+  border-style: solid;
+  -o-border-image: radial-gradient(transparent, #a357fe, transparent) 1;
+     border-image: radial-gradient(transparent, #a357fe, transparent) 1;
+}
+
+.hero-card-container.warrior .portrait-card,
+.monster-card-container.warrior .portrait-card {
+  -o-border-image: radial-gradient(transparent, #feba00, transparent) 1;
+     border-image: radial-gradient(transparent, #feba00, transparent) 1;
+}
+
+.hero-card-container.assasin .portrait-card,
+.monster-card-container.assasin .portrait-card {
+  -o-border-image: radial-gradient(transparent, #bf0000, transparent) 1;
+     border-image: radial-gradient(transparent, #bf0000, transparent) 1;
+}
+
+.hero-card-container.magician .portrait-card,
+.monster-card-container.magician .portrait-card {
+  -o-border-image: radial-gradient(transparent, #0c7cfe, transparent) 1;
+     border-image: radial-gradient(transparent, #0c7cfe, transparent) 1;
+}
+
+.hero-card-container.archer .portrait-card,
+.monster-card-container.archer .portrait-card {
+  -o-border-image: radial-gradient(transparent, #6000fe, transparent) 1;
+     border-image: radial-gradient(transparent, #6000fe, transparent) 1;
+}
+
+.hero-card-container.monster .portrait-card,
+.monster-card-container.monster .portrait-card {
+  -o-border-image: radial-gradient(transparent, #ff4b0f, transparent) 1;
+     border-image: radial-gradient(transparent, #ff4b0f, transparent) 1;
+}
+
 .hero-card,
 .monster-card {
   position: relative;
+  background-color: #020c26;
 }
 
 .hero-card img.portrait-card,
 .monster-card img.portrait-card {
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   max-width: 100%;
-  border: 0px;
-  border-bottom-width: 1px;
-  border-style: solid;
-  border-image: radial-gradient(#ff00cc, rgba(0, 0, 0, 0.25)) 1;
 }
 
 .hero-card .role-icon-container,
@@ -83,7 +126,8 @@ section {
   width: 25%;
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -60%);
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
 }
 
 .hero-card .role-icon-container img,
@@ -136,14 +180,13 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, .25);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 #game .hero-card-container.is-selected::after,
 #game .monster-card-container.is-selected::after {
   display: none;
 }
-
 
 .bouton {
   margin-top: 20px;
@@ -156,12 +199,15 @@ section {
 }
 
 /* GAME - VERSUS */
-
 #versus-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .atk-container {
   display: block;
 }
+/*# sourceMappingURL=style.css.map */

@@ -37,9 +37,10 @@ function cardHtml(heroesObjArray, type) {
     html += `<img class="portrait-card" src="./public/img/${hero.name.toLowerCase()}.jpg" alt="${hero.name} portrait">`
     html += `<div class="role-icon-container">`
     html += `<img class="${hero.role.toLowerCase()}">`
-    html += `</div>` 
+    html += `</div>`
     html += `<div class="${type}-name">${hero.name}</div>`
     html += `<div class="${type}-role">${hero.role}</div>`
+    html += `<div class="card-details">`
     html += `<div class="${type}-hp">hp : ${hero.hp}</div>`
     html += `<div class="${type}-mana">mana : ${hero.mana}</div>`
     html += `<div class="${type}-atk">attack : ${hero.atk}</div>`
@@ -47,6 +48,7 @@ function cardHtml(heroesObjArray, type) {
     html += `<div class="${type}-armor">armor : ${hero.armor}</div>`
     html += `<div class="${type}-armor">armor Spell : ${hero.armorSpell}</div>`
     html += `<div class="${type}-armor">level : ${hero.lvl}</div>`
+    html += `</div>`
     html += `</div>`
     html += `<div class="btns-container"></div>`
     html += `</div>`

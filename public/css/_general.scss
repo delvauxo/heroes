@@ -51,6 +51,23 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
+      
+    .hero-card,
+    .monster-card {
+        position: relative;
+        background-color: #020c26;
+        overflow: hidden;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            background: linear-gradient(360deg, transparent, #ff4b0f);
+            top: -35%;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+        }
+    }
 
     img.portrait-card {
         border: 0;
@@ -59,10 +76,29 @@
         border-image: radial-gradient(transparent, #a357fe, transparent) 1;
     }
 
+      
+    .hero-card .hero-role,
+    .monster-card .monster-role {
+        text-align: center;
+        font-size: .8rem;
+    }
+
     &.warrior {
      
         .portrait-card {
             border-image: radial-gradient(transparent, #feba00, transparent) 1;
+        }
+  
+        .hero-card {
+
+            .monster-role, 
+            .hero-role {
+                color: #feba00;
+            }
+        
+            &::after {
+                background: linear-gradient(360deg, transparent, #feba00);
+            }
         }
     }
 
@@ -71,6 +107,19 @@
         .portrait-card {
             border-image: radial-gradient(transparent, #bf0000, transparent) 1;
         }
+  
+  
+        .hero-card {
+
+            .monster-role, 
+            .hero-role {
+                color: #bf0000;
+            }
+        
+            &::after {
+                background: linear-gradient(360deg, transparent, #bf0000);
+            }
+        }
     }
 
     &.magician {
@@ -78,12 +127,36 @@
         .portrait-card {
             border-image: radial-gradient(transparent, #0c7cfe, transparent) 1;
         }
+  
+        .hero-card {
+
+            .monster-role, 
+            .hero-role {
+                color: #0c7cfe;
+            }
+        
+            &::after {
+                background: linear-gradient(360deg, transparent, #0c7cfe);
+            }
+        }
     }
 
     &.archer {
      
         .portrait-card {
-            border-image: radial-gradient(transparent, #6000fe, transparent) 1;
+            border-image: radial-gradient(transparent, #cb98fe, transparent) 1;
+        }
+  
+        .hero-card {
+
+            .monster-role, 
+            .hero-role {
+                color: #cb98fe;
+            }
+        
+            &::after {
+                background: linear-gradient(360deg, transparent, #cb98fe);
+            }
         }
     }
 
@@ -92,6 +165,17 @@
         .portrait-card {
             border-image: radial-gradient(transparent, #ff4b0f, transparent) 1;
         }
+  
+        .monster-card {
+
+            .monster-role {
+                color: #ff4b0f;
+            }
+        
+            &::after {
+                background: linear-gradient(360deg, transparent, #ff4b0f);
+            }
+        }
     }
   }
   
@@ -99,6 +183,17 @@
   .monster-card {
     position: relative;
     background-color: #020c26;
+    overflow: hidden;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        background: linear-gradient(360deg, transparent, #ff4b0f);
+        top: -35%;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+    }
   }
   
   .hero-card img.portrait-card,
@@ -107,6 +202,7 @@
     left: 50%;
     transform: translateX(-50%);
     max-width: 100%;
+    z-index: 2;
   }
   
   .hero-card .role-icon-container,
@@ -115,6 +211,7 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -60%);
+    z-index: 3;
   }
   
   .hero-card .role-icon-container img,
@@ -148,6 +245,11 @@
   
   .hero-card .role-icon-container .magician {
     background-position: 60% 0;
+  }
+  
+  .hero-card .card-details,
+  .monster-card .card-details {
+    padding: 15px;
   }
   
   .hero-card .hero-name,

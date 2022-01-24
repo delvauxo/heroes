@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Metronic Pro';
+  src: url('../fonts/MetronicPro.eot');
+  src: local('../fonts/Metronic Pro SemiBold'), local('../fonts/MetronicPro'),
+      url('../fonts/MetronicPro.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/MetronicPro.woff2') format('woff2'),
+      url('../fonts/MetronicPro.woff') format('woff'),
+      url('../fonts/MetronicPro.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +20,7 @@ body {
   overflow-x: hidden;
   background-color: rgb(2, 16, 50);
   color: white;
+  font-family: 'Metronic Pro';
 }
 
 header {
@@ -21,7 +34,16 @@ header {
   position: relative;
 }
 
+section {
+  background: url("../img/bg-pattern.png") repeat-x;
+}
+
 /* GAME - Selection */
+
+#heroes-selection h2 {
+  margin: 0;
+  padding: 25px 0;
+}
 
 #heroes,
 #monsters {

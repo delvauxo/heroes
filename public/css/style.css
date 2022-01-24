@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100vw;
+  height: 250px;
+  background-image: url("../img/banner-logo.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: black;
+  position: relative;
+}
+
+/* GAME - Selection */
+
+#heroes,
+#monsters {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.hero-card-container,
+.monster-card-container {
+  width: 25%;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hero-card img,
+.monster-card img,
+.in-game-card img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+}
+
+.hero-card .hero-name,
+.monster-card .monster-name {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero-card-container.is-selected,
+.monster-card-container.is-selected {
+  position: relative;
+}
+
+.hero-card-container.is-selected::after,
+.monster-card-container.is-selected::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.bouton {
+  margin-top: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.bouton[disabled] {
+  cursor: not-allowed;
+}
+
+/* GAME - VERSUS */
+
+#versus-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.atk-container {
+  display: block;
+}

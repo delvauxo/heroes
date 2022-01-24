@@ -277,7 +277,6 @@
     display: none;
   }
   
-  
   .bouton {
     margin-top: 20px;
     padding: 5px 15px;
@@ -290,6 +289,15 @@
   
   /* GAME - VERSUS */
   
+  #game {
+      display: none;
+
+      h2 {
+          margin: 0;
+          padding: 25px 0;
+      }
+  }
+
   #versus-container {
     display: flex;
     justify-content: space-around;

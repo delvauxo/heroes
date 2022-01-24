@@ -18,6 +18,10 @@ class Game {
     const selectionScreen = document.querySelector('#heroes-selection')
     selectionScreen.style.display = 'none'
 
+    // Show Game board screen.
+    const gameScreen = document.querySelector('#game')
+    gameScreen.style.display = 'block'
+
     // Players cards container selectors.
     const player1Card = document.querySelector('#heroes-selection .hero-card-container.is-selected')
     const player2Card = document.querySelector('#heroes-selection .monster-card-container.is-selected')

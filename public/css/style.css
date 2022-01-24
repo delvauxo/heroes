@@ -313,6 +313,15 @@ section {
 }
 
 /* GAME - VERSUS */
+#game {
+  display: none;
+}
+
+#game h2 {
+  margin: 0;
+  padding: 25px 0;
+}
+
 #versus-container {
   display: -webkit-box;
   display: -ms-flexbox;

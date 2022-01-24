@@ -72,7 +72,10 @@ section {
   left: 50%;
   transform: translateX(-50%);
   max-width: 100%;
-  border-bottom: 1px solid black;
+  border: 0px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-image: radial-gradient(#ff00cc, rgba(0, 0, 0, 0.25)) 1;
 }
 
 .hero-card .role-icon-container,

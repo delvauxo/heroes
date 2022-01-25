@@ -26,9 +26,22 @@ class Game {
     const player1Card = document.querySelector('#heroes-selection .hero-card-container.is-selected')
     const player2Card = document.querySelector('#heroes-selection .monster-card-container.is-selected')
 
-    // Insert players cards into HTML.
+    // Versus Image container and Image.
+    const versusImgContainer = document.createElement('div')
+    versusImgContainer.setAttribute('id', 'versus-image-container')
+    const versusImg = document.createElement('img')
+    versusImg.src = './public/img/vs.png'
+    versusImg.setAttribute('id', 'versus-image')
+    // Insert img inside container.
+    versusImgContainer.appendChild(versusImg)
+    const gameLog = document.createElement('div')
+    gameLog.setAttribute('id', 'versus-gamelog')
+    versusImgContainer.appendChild(gameLog)
+
+    // Insert players cards and versus container into HTML.
     const versusElem = document.querySelector('#versus-container')
     versusElem.appendChild(player1Card)
+    versusElem.appendChild(versusImgContainer)
     versusElem.appendChild(player2Card)
 
     // Attack buttons container selector.

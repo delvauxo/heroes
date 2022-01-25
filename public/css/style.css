@@ -6,6 +6,14 @@
   font-style: normal;
 }
 
+.txt-green {
+  color: #66FF66;
+}
+
+.txt-red {
+  color: orangered;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -234,8 +242,8 @@ section {
   width: 25%;
   position: absolute;
   left: 50%;
-  -webkit-transform: translate(-50%, -60%);
-          transform: translate(-50%, -60%);
+  -webkit-transform: translate(-50%, -59%);
+          transform: translate(-50%, -59%);
   z-index: 3;
 }
 
@@ -322,7 +330,7 @@ section {
   padding: 25px 0;
 }
 
-#versus-container {
+#game #versus-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -330,7 +338,27 @@ section {
       justify-content: space-around;
 }
 
-.atk-container {
+#game #versus-container #versus-image-container {
+  text-align: center;
+}
+
+#game #versus-container #versus-image-container #versus-image {
+  width: 50%;
+  padding-bottom: 5%;
+}
+
+#game #versus-container #versus-image-container #versus-gamelog {
+  padding: 15px;
+  background-color: #020c26;
+  border: 0;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  -o-border-image: radial-gradient(transparent, #5d9dce, transparent) 1;
+     border-image: radial-gradient(transparent, #5d9dce, transparent) 1;
+}
+
+#game #versus-container .atk-container {
   display: block;
 }
 /*# sourceMappingURL=style.css.map */

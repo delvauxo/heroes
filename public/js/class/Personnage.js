@@ -1,3 +1,8 @@
+function gameLog(html) {
+  selector = document.querySelector('#versus-gamelog')
+  selector.appendChild(html)
+}
+
 class Personnage {
   
   // Constructor.
@@ -12,13 +17,21 @@ class Personnage {
     this.lvl = 1;
   }
 
+
   // Attack (basic) method.
   attack(target) {
     // Attack.
     target.hp = target.hp + target.armor - this.atk
     // Gain mana.
     this.mana = this.mana + 5
-    console.log(this.name + ' attack ' + target.name + ' with ' + (this.atk - target.armor) + ' damage')
+    const p = document.createElement('p')
+    let html = `<span class="${(target.role !== 'Monster') ? 'txt-red' : 'txt-green'}">${this.name}</span>`
+        html += ` attacks `
+        html += `<span class="${(target.role !== 'Monster') ? 'txt-green' : 'txt-red'}">${target.name}</span>`
+        html += ` with ${(this.atk - target.armor)} damages.`
+    p.innerHTML = html
+    const selector = document.querySelector('#versus-gamelog')
+    selector.prepend(p)
   }
 
   // Attack (spell) method.
@@ -27,7 +40,16 @@ class Personnage {
     target.hp = target.hp + target.armorSpell - this.atkSpell
     // Reduce Mana.
     this.mana = this.mana - 25
-    console.log(this.name + ' attack spell ' + target.name + ' with ' + (this.atkSpell - target.armorSpell) + ' damage')
+    const p = document.createElement('p')
+    console.log(target.role)
+    let html = `<span class="${(target.role !== 'Monster') ? 'txt-red' : 'txt-green'}">${this.name}</span>`
+        html += ` attacks `
+        html += `<span class="${(target.role !== 'Monster') ? 'txt-green' : 'txt-red'}">${target.name}</span>`
+        html += ` with ${(this.atkSpell - target.armorSpell)} damages.`
+    p.innerHTML = html
+    const selector = document.querySelector('#versus-gamelog')
+    selector.prepend(p)
+
   }
 
 }

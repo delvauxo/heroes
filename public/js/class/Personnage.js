@@ -1,6 +1,14 @@
-function gameLog(html) {
-  selector = document.querySelector('#versus-gamelog')
-  selector.appendChild(html)
+function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
 }
 
 class Personnage {
@@ -15,6 +23,7 @@ class Personnage {
     this.atk = 5;
     this.atkSpell = 15;
     this.lvl = 1;
+    this.hpTmp = this.hp;
   }
 
   // Attack (basic) method.
@@ -50,10 +59,15 @@ class Personnage {
     // Update life (hp) VS status.
     const hpVSHero = document.querySelector('#game #hero-hp-left')
     const hpVSMonster = document.querySelector('#game #monster-hp-left')
+    
     if(target.role != 'Monster') {
       hpVSHero.textContent = target.hp
+      this.hpTmp = parseInt(hpVSHero.dataset.hptmp)
+      animateValue(hpVSHero, this.hpTmp, target.hp, 1000);
     } else {
       hpVSMonster.textContent = target.hp
+      this.hpTmp = parseInt(hpVSMonster.dataset.hptmp)
+      animateValue(hpVSMonster, this.hpTmp, target.hp, 1000);
     }
   }
 
@@ -101,9 +115,12 @@ class Personnage {
     const hpVSMonster = document.querySelector('#game #monster-hp-left')
     if(target.role != 'Monster') {
       hpVSHero.textContent = target.hp
+      this.hpTmp = parseInt(hpVSHero.dataset.hptmp)
+      animateValue(hpVSHero, this.hpTmp, target.hp, 1000);
     } else {
       hpVSMonster.textContent = target.hp
-    }
+      this.hpTmp = parseInt(hpVSMonster.dataset.hptmp)
+      animateValue(hpVSMonster, this.hpTmp, target.hp, 1000);}
   }
 
 }

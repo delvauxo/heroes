@@ -38,6 +38,7 @@ class Game {
     // Hero current HP left.
     const hpLeftHero = document.createElement('div')
     hpLeftHero.setAttribute('id', 'hero-hp-left')
+    hpLeftHero.dataset.hptmp = player1.hp
     hpsWrapper.appendChild(hpLeftHero)
     hpLeftHero.textContent = player1.hp
     // Insert img inside container.
@@ -45,6 +46,7 @@ class Game {
     // Monster current HP left.
     const hpLeftMonster = document.createElement('div')
     hpLeftMonster.setAttribute('id', 'monster-hp-left')
+    hpLeftMonster.dataset.hptmp = player2.hp
     hpsWrapper.appendChild(hpLeftMonster)
     hpLeftMonster.textContent = player2.hp
 
@@ -79,28 +81,32 @@ class Game {
     atkMonsterContainer.appendChild(atkBtn2)
     atkMonsterContainer.appendChild(atkSpellBtn2)
 
+    // Set HP temp.
+    const hpVSHero = document.querySelector('#game #hero-hp-left')
+    const hpVSMonster = document.querySelector('#game #monster-hp-left')
+
     // Player 1 - Basic attack.
     atkBtn.addEventListener('click', function(e) {
       player1.attack(player2)
-      console.log(player2.hp)
+      hpVSMonster.dataset.hptmp = player2.hp
     })
     
     // Player 1 - Spell attack.
     atkSpellBtn.addEventListener('click', function() {
       player1.attackSpell(player2)
-      console.log(player2.hp)
+      hpVSMonster.dataset.hptmp = player2.hp
     })
     
     // Player 2 - Basic attack.
     atkBtn2.addEventListener('click', function() {
       player2.attack(player1)
-      console.log(player1.hp)
+      hpVSHero.dataset.hptmp = player1.hp
     })
 
     // Player 2 - Spell attack.
     atkSpellBtn2.addEventListener('click', function() {
       player2.attackSpell(player1)
-      console.log(player1.hp)
+      hpVSHero.dataset.hptmp = player1.hp
     })
 
     console.log(player1)

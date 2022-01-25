@@ -17,21 +17,32 @@ class Personnage {
     this.lvl = 1;
   }
 
-
   // Attack (basic) method.
   attack(target) {
     // Attack.
     target.hp = target.hp + target.armor - this.atk
     // Gain mana.
-    this.mana = this.mana + 5
+    // this.mana = this.mana + 5
+    // Log dealt damages.
     const p = document.createElement('p')
     let html = `<span class="${(target.role !== 'Monster') ? 'txt-red' : 'txt-green'}">${this.name}</span>`
-        html += ` attacks `
+        html += ` deals `
+        html += `${(this.atk - target.armor)} damages to `
         html += `<span class="${(target.role !== 'Monster') ? 'txt-green' : 'txt-red'}">${target.name}</span>`
-        html += ` with ${(this.atk - target.armor)} damages.`
     p.innerHTML = html
     const selector = document.querySelector('#versus-gamelog')
     selector.prepend(p)
+    // Update life (hp) bar status.
+    let hpBar = ''
+    if(target.role != 'Monster') {
+      hpBar = document.querySelector('#game .hero-card-container.is-selected .card-hp')
+    } else {
+      hpBar = document.querySelector('#game .monster-card-container.is-selected .card-hp')
+    }
+    const manaBar = document.querySelector('#game .hero-card-container.is-selected .card-mana')
+    const hpStart = hpBar.dataset.hp
+    const hpLeft = (target.hp * 100) / hpStart
+    hpBar.style.width = hpLeft + '%'
   }
 
   // Attack (spell) method.
@@ -41,15 +52,24 @@ class Personnage {
     // Reduce Mana.
     this.mana = this.mana - 25
     const p = document.createElement('p')
-    console.log(target.role)
     let html = `<span class="${(target.role !== 'Monster') ? 'txt-red' : 'txt-green'}">${this.name}</span>`
-        html += ` attacks `
+        html += ` deals `
+        html += `${(this.atkSpell - target.armorSpell)} damages to `
         html += `<span class="${(target.role !== 'Monster') ? 'txt-green' : 'txt-red'}">${target.name}</span>`
-        html += ` with ${(this.atkSpell - target.armorSpell)} damages.`
     p.innerHTML = html
     const selector = document.querySelector('#versus-gamelog')
     selector.prepend(p)
-
+    // Update life (hp) bar status.
+    let hpBar = ''
+    if(target.role != 'Monster') {
+      hpBar = document.querySelector('#game .hero-card-container.is-selected .card-hp')
+    } else {
+      hpBar = document.querySelector('#game .monster-card-container.is-selected .card-hp')
+    }
+    const manaBar = document.querySelector('#game .hero-card-container.is-selected .card-mana')
+    const hpStart = hpBar.dataset.hp
+    const hpLeft = (target.hp * 100) / hpStart
+    hpBar.style.width = hpLeft + '%'
   }
 
 }

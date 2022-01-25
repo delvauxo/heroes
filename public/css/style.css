@@ -340,7 +340,7 @@ section {
 #game .hero-card-container.is-selected .card-mana,
 #game .monster-card-container.is-selected .card-mana {
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   width: 100%;
   height: 15px;
   background-color: dodgerblue;

@@ -38,6 +38,7 @@ class Game {
     // Hero current HP left.
     const hpLeftHero = document.createElement('div')
     hpLeftHero.setAttribute('id', 'hero-hp-left')
+    hpLeftHero.classList.add('txt-green')
     hpLeftHero.dataset.hptmp = player1.hp
     hpsWrapper.appendChild(hpLeftHero)
     hpLeftHero.textContent = player1.hp
@@ -46,6 +47,7 @@ class Game {
     // Monster current HP left.
     const hpLeftMonster = document.createElement('div')
     hpLeftMonster.setAttribute('id', 'monster-hp-left')
+    hpLeftMonster.classList.add('txt-red')
     hpLeftMonster.dataset.hptmp = player2.hp
     hpsWrapper.appendChild(hpLeftMonster)
     hpLeftMonster.textContent = player2.hp

@@ -48,6 +48,7 @@ class Game {
     hpsWrapper.appendChild(hpLeftMonster)
     hpLeftMonster.textContent = player2.hp
 
+    // Insert container with all childs.
     versusImgContainer.appendChild(hpsWrapper)
 
     // Game logs.

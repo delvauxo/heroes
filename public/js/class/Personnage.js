@@ -35,7 +35,7 @@ class Personnage {
     p.innerHTML = html
     const selector = document.querySelector('#versus-gamelog')
     selector.prepend(p)
-    
+
     // Update life (hp) bar status.
     let hpBar = ''
     if(target.role != 'Monster') {
@@ -46,6 +46,15 @@ class Personnage {
     const hpStart = hpBar.dataset.hp
     const hpLeft = (target.hp * 100) / hpStart
     hpBar.style.width = hpLeft + '%'
+
+    // Update life (hp) VS status.
+    const hpVSHero = document.querySelector('#game #hero-hp-left')
+    const hpVSMonster = document.querySelector('#game #monster-hp-left')
+    if(target.role != 'Monster') {
+      hpVSHero.textContent = target.hp
+    } else {
+      hpVSMonster.textContent = target.hp
+    }
   }
 
   // Attack (spell) method.
@@ -86,6 +95,15 @@ class Personnage {
     const manaStart = manaBar.dataset.mana
     const manaLeft = (this.mana * 100) / manaStart
     manaBar.style.width = manaLeft + '%'
+
+    // Update life (hp) VS status.
+    const hpVSHero = document.querySelector('#game #hero-hp-left')
+    const hpVSMonster = document.querySelector('#game #monster-hp-left')
+    if(target.role != 'Monster') {
+      hpVSHero.textContent = target.hp
+    } else {
+      hpVSMonster.textContent = target.hp
+    }
   }
 
 }

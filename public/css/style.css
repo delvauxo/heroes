@@ -69,7 +69,6 @@ section {
 .hero-card-container,
 .monster-card-container {
   width: 25%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -82,6 +81,7 @@ section {
   position: relative;
   background-color: #020c26;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-card-container .hero-card::after,
@@ -328,6 +328,22 @@ section {
 #game h2 {
   margin: 0;
   padding: 25px 0;
+}
+
+#game .hero-card-container.is-selected .card-hp,
+#game .monster-card-container.is-selected .card-hp {
+  width: 100%;
+  height: 15px;
+  background-color: #66FF66;
+}
+
+#game .hero-card-container.is-selected .card-mana,
+#game .monster-card-container.is-selected .card-mana {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 15px;
+  background-color: dodgerblue;
 }
 
 #game #versus-container {

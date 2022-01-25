@@ -58,7 +58,6 @@ section {
 .hero-card-container,
 .monster-card-container {
   width: 25%;
-  border: 1px solid rgba(255, 255, 255, .1);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -68,6 +67,7 @@ section {
       position: relative;
       background-color: #020c26;
       overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .1);
       
       &::after {
           content: '';
@@ -306,6 +306,24 @@ section {
   h2 {
       margin: 0;
       padding: 25px 0;
+  }
+
+  .hero-card-container.is-selected,
+  .monster-card-container.is-selected {
+
+    .card-hp {
+      width: 100%;
+      height: 15px;
+      background-color: #66FF66;
+    }
+
+    .card-mana {
+      margin-top: 5px;
+      margin-bottom: 15px;
+      width: 100%;
+      height: 15px;
+      background-color: dodgerblue;
+    }
   }
 
   #versus-container {

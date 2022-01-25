@@ -315,6 +315,7 @@ section {
       width: 100%;
       height: 15px;
       background-color: #66FF66;
+      transition: width .25s ease-in-out;
     }
 
     .card-mana {
@@ -323,19 +324,36 @@ section {
       width: 100%;
       height: 15px;
       background-color: dodgerblue;
+      transition: width .25s ease-in-out;
     }
   }
 
   #versus-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     #versus-image-container {
       text-align: center;
-      
-      #versus-image {
-        width: 50%;
-        padding-bottom: 5%;
+      width: 40%;
+
+      #hps-wrapper {
+        display: flex;
+        align-items: center;
+        
+        #hero-hp-left {
+          font-size: 4rem;
+          width: 25%;
+        }
+  
+        #monster-hp-left {
+          font-size: 4rem;
+          width: 25%;
+        }
+        
+        #versus-image {
+          max-width: 50%;
+          padding-bottom: 5%;
+        }
       }
 
       #versus-gamelog {

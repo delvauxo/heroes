@@ -32,8 +32,25 @@ class Game {
     const versusImg = document.createElement('img')
     versusImg.src = './public/img/vs.png'
     versusImg.setAttribute('id', 'versus-image')
+    // HPs container.
+    const hpsWrapper = document.createElement('div')
+    hpsWrapper.setAttribute('id', 'hps-wrapper')
+    // Hero current HP left.
+    const hpLeftHero = document.createElement('div')
+    hpLeftHero.setAttribute('id', 'hero-hp-left')
+    hpsWrapper.appendChild(hpLeftHero)
+    hpLeftHero.textContent = player1.hp
     // Insert img inside container.
-    versusImgContainer.appendChild(versusImg)
+    hpsWrapper.appendChild(versusImg)
+    // Monster current HP left.
+    const hpLeftMonster = document.createElement('div')
+    hpLeftMonster.setAttribute('id', 'monster-hp-left')
+    hpsWrapper.appendChild(hpLeftMonster)
+    hpLeftMonster.textContent = player2.hp
+
+    versusImgContainer.appendChild(hpsWrapper)
+
+    // Game logs.
     const gameLog = document.createElement('div')
     gameLog.setAttribute('id', 'versus-gamelog')
     versusImgContainer.appendChild(gameLog)

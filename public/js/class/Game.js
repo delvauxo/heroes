@@ -74,6 +74,8 @@ class Game {
     const atkSpellBtn = document.createElement("button")
     atkBtn.innerText = 'Attack'
     atkSpellBtn.innerText = 'Spell'
+    atkBtn.classList.add('btn')
+    atkSpellBtn.classList.add('btn')
     // Hero.
     atkHeroContainer.appendChild(atkBtn)
     atkHeroContainer.appendChild(atkSpellBtn)
@@ -88,7 +90,7 @@ class Game {
     const hpVSMonster = document.querySelector('#game #monster-hp-left')
 
     // Player 1 - Basic attack.
-    atkBtn.addEventListener('click', function(e) {
+    atkBtn.addEventListener('click', function() {
       player1.attack(player2)
       hpVSMonster.dataset.hptmp = player2.hp
     })

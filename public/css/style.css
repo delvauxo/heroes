@@ -310,14 +310,35 @@ section {
   display: none;
 }
 
-.bouton {
-  margin-top: 20px;
-  padding: 5px 15px;
+.btn {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e07b00), to(#ea550b));
+  background: linear-gradient(180deg, #e07b00, #ea550b);
+  border: 1px solid #893206;
+  color: white;
   cursor: pointer;
+  font-family: 'Metronic Pro';
+  min-width: 150px;
+  padding: 5px 15px;
+  text-transform: uppercase;
 }
 
-.bouton[disabled] {
+.btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#7a4300), to(#893206));
+  background: linear-gradient(180deg, #7a4300, #893206);
+}
+
+.btn#buttonChoice {
+  margin-top: 20px;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.btn[disabled] {
   cursor: not-allowed;
+  background: grey;
+  border-color: #4d4d4d;
 }
 
 /* GAME - VERSUS */
@@ -348,6 +369,17 @@ section {
   background-color: dodgerblue;
   -webkit-transition: width 1s ease-in-out;
   transition: width 1s ease-in-out;
+}
+
+#game .hero-card-container.is-selected .btns-container,
+#game .monster-card-container.is-selected .btns-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 1rem;
 }
 
 #game #versus-container {

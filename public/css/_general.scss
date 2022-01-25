@@ -288,15 +288,36 @@ section {
   display: none;
 }
 
-.bouton {
-  margin-top: 20px;
-  padding: 5px 15px;
+  
+.btn {
+  background: linear-gradient(180deg,#e07b00,#ea550b);
+  border: 1px solid darken(#ea550b, 20%);
+  color: white;
   cursor: pointer;
+  font-family: 'Metronic Pro';
+  min-width: 150px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+
+  &:hover {
+    background: linear-gradient(180deg, darken(#e07b00, 20%), darken(#ea550b, 20%));
+  }
+
+  
+  &#buttonChoice {
+    margin-top: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background: grey;
+    border-color: darken(grey, 20%);
+  }
 }
 
-.bouton[disabled] {
-  cursor: not-allowed;
-}
 
 /* GAME - VERSUS */
 
@@ -325,6 +346,12 @@ section {
       height: 15px;
       background-color: dodgerblue;
       transition: width 1s ease-in-out;
+    }
+
+    .btns-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1rem;
     }
   }
 
